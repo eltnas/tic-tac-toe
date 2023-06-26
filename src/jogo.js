@@ -43,11 +43,11 @@ const Jogo = () => {
     const winner = calculateWinner(squares);
     let status;
     if (winner) {
-        status = "Winner: " + winner;
+        status = "Vencedor: " + winner;
     } else if (squares.every((square) => square !== null)) {
-        status = "It's a draw!";
+        status = "Empatou!";
     } else {
-        status = "Next player: " + (xIsNext ? "X" : "O");
+        status = "Proximo: " + (xIsNext ? "X" : "O");
     }
 
     return (
@@ -55,7 +55,7 @@ const Jogo = () => {
         <Board squares={squares} onClick={handleClick} />
         <div className="status">{status}</div>
         <button className="restart" onClick={restartGame}>
-            Restart
+            Reiniciar
         </button>
         </div>
     );
